@@ -1,0 +1,439 @@
+{
+	"info": {
+		"_postman_id": "4236a22b-b27e-46da-a8f1-d2166bd79041",
+		"name": "ShowPlace",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "21161342"
+	},
+	"item": [
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "Sign Up",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {}
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\"username\": \"fernando\",\r\n\"password\": \"Fernando@1\",\r\n\"email\": \"f.tolosa01@ufromail.cl\",\r\n\"event\" : [],\r\n\"bookings\": []\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:8080/Sign-Up"
+					},
+					"response": []
+				},
+				{
+					"name": "login",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n      \"email\":\"f.tolosa01@ufromail.cl\",\r\n      \"password\": \"Fernando@1\",\r\n      \"username\": \"fernando\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:8080/Sign-in"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Publication",
+			"item": [
+				{
+					"name": "Publication Place Copy",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "Bearer eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJmLnRvbG9zYTAxQHVmcm9tYWlsLmNsIiwiZXhwIjoxNjkxMzY0NDQwLCJ1c2VybmFtZSI6ImZlcm5hbmRvIn0.0lw0uAbKVF3HKtQK5FXCyN35vzcvbiT9vgrpqKSBtVDe2QeAaiVs_-AtCJFoxFsx"
+							}
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"name\": \"cancha de futbol\",\r\n  \"description\": \"cancha de 70 x 40 metros\",\r\n  \"contactNumber\": \"+569 12345698\",\r\n  \"email\": \"f.tolosa01@ufromail.cl\",\r\n  \"image\": \"https://images.unsplash.com/photo-1459865264687-595d652de67e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80\",\r\n  \"pricePerHour\": 15000,\r\n  \"paymentPolicy\": \"All\",\r\n  \"typeOfActivity\": \"Sports\",\r\n    \"tenant\": {\r\n        \"id\": 1\r\n    },\r\n  \"availability\": {\r\n    \"availability_id\": 1,\r\n    \"availabilityStart\": \"2023-05-03T10:15:30\",\r\n    \"availabilityEnd\": \"2023-12-03T10:15:30\",\r\n    \"availabilityUsed\": []\r\n  },\r\n  \"location\": {\r\n      \"location_id\": 1,\r\n      \"city\": \"Temuco\",\r\n      \"street\": \"Uruguay 1666\"\r\n  },\r\n  \"collectionPolicy\": \"All\"\r\n\r\n} \r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:8080/Publication"
+					},
+					"response": []
+				},
+				{
+					"name": "publicationList",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "Bearer eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJmLnRvbG9zYTAxQHVmcm9tYWlsLmNsIiwiZXhwIjoxNjkxMzY1MjU1LCJ1c2VybmFtZSI6ImZlcm5hbmRvIn0.2tAZUWeIIoS-YuqiuaPtLrBnl0WDjbEEu_Zz49MmC7vLSR2Vm2MVY2_i8RyrZWy_"
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:8080/list-publication"
+					},
+					"response": []
+				},
+				{
+					"name": "publicationListNearby",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:8080/list-publication-nearby"
+					},
+					"response": []
+				},
+				{
+					"name": "specific Publication",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:8080/publication/1"
+					},
+					"response": []
+				},
+				{
+					"name": "Report",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:8080/1/report"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Booking",
+			"item": [
+				{
+					"name": "cancel_lease",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "Bearer eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJmLnRvbG9zYTAxQHVmcm9tYWlsLmNsIiwiZXhwIjoxNjkxMzY1MjU1LCJ1c2VybmFtZSI6ImZlcm5hbmRvIn0.2tAZUWeIIoS-YuqiuaPtLrBnl0WDjbEEu_Zz49MmC7vLSR2Vm2MVY2_i8RyrZWy_"
+							}
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:8080/cancel_lease/1"
+					},
+					"response": []
+				},
+				{
+					"name": "reservePlace",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "Bearer eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJmLnRvbG9zYTAxQHVmcm9tYWlsLmNsIiwiZXhwIjoxNjkxMzY1MjU1LCJ1c2VybmFtZSI6ImZlcm5hbmRvIn0.2tAZUWeIIoS-YuqiuaPtLrBnl0WDjbEEu_Zz49MmC7vLSR2Vm2MVY2_i8RyrZWy_"
+							}
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\r\n    \"publication\":{\r\n        \"id\":1\r\n    },\r\n      \"bookingStart\": \"2023-06-10T09:00:00\",\r\n      \"bookingEnd\": \"2023-06-10T12:00:00\",\r\n      \"price\": \"45000\",\r\n      \"confirmedReservation\": true,\r\n      \"customer\": {\r\n        \"id\": 1\r\n      },\r\n      \"pay\": {\r\n        \"summary\": \"Pago de reserva 1\",\r\n        \"paymentMethod\": \"Tarjeta de crédito\",\r\n        \"price\": \"45000\",\r\n        \"confirmedEventPay\": true,\r\n        \"confirmedBookingPay\": true\r\n      }\r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:8080/reserve-place"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Qualification",
+			"item": [
+				{
+					"name": "qualify Publication",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "Bearer eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJmLnRvbG9zYTAxQHVmcm9tYWlsLmNsIiwiZXhwIjoxNjkxMzY1MjU1LCJ1c2VybmFtZSI6ImZlcm5hbmRvIn0.2tAZUWeIIoS-YuqiuaPtLrBnl0WDjbEEu_Zz49MmC7vLSR2Vm2MVY2_i8RyrZWy_"
+							}
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"qualification\":3\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:8080/qualify-publication/1"
+					},
+					"response": []
+				},
+				{
+					"name": "qualify-place",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "Bearer eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJmLnRvbG9zYTAxQHVmcm9tYWlsLmNsIiwiZXhwIjoxNjkxMzY1MjU1LCJ1c2VybmFtZSI6ImZlcm5hbmRvIn0.2tAZUWeIIoS-YuqiuaPtLrBnl0WDjbEEu_Zz49MmC7vLSR2Vm2MVY2_i8RyrZWy_"
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"qualification\":3\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:8080/qualify-publication/1"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Availability",
+			"item": [
+				{
+					"name": "place-availability",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "Bearer eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJmLnRvbG9zYTAxQHVmcm9tYWlsLmNsIiwiZXhwIjoxNjkxMzY1MjU1LCJ1c2VybmFtZSI6ImZlcm5hbmRvIn0.2tAZUWeIIoS-YuqiuaPtLrBnl0WDjbEEu_Zz49MmC7vLSR2Vm2MVY2_i8RyrZWy_"
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:8080/place-availability/1"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Event",
+			"item": [
+				{
+					"name": "save event",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "Bearer eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJmLnRvbG9zYTAxQHVmcm9tYWlsLmNsIiwiZXhwIjoxNjkxMzY1MjU1LCJ1c2VybmFtZSI6ImZlcm5hbmRvIn0.2tAZUWeIIoS-YuqiuaPtLrBnl0WDjbEEu_Zz49MmC7vLSR2Vm2MVY2_i8RyrZWy_"
+							}
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"confirmedEvent\": true,\r\n    \"description\": \"carrida familiar, en modalidades de 5k, 3k y 1k\",\r\n    \"image\": \"https://images.unsplash.com/photo-1530103862676-de8c9debad1d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80\",\r\n    \"name\": \"Corrida familiar\",\r\n    \"participants\": 5,\r\n    \"participationFee\":\"2000 pesos\",\r\n    \"booking\": {\r\n        \"id\": 1\r\n    }\r\n\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:8080/save-event/1"
+					},
+					"response": []
+				},
+				{
+					"name": "Join event",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "Bearer eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJmLnRvbG9zYTAxQHVmcm9tYWlsLmNsIiwiZXhwIjoxNjkxMzY1MjU1LCJ1c2VybmFtZSI6ImZlcm5hbmRvIn0.2tAZUWeIIoS-YuqiuaPtLrBnl0WDjbEEu_Zz49MmC7vLSR2Vm2MVY2_i8RyrZWy_"
+							}
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\":1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:8080/join-event/1"
+					},
+					"response": []
+				},
+				{
+					"name": "cancel participation in event",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "Bearer eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJmLnRvbG9zYTAxQHVmcm9tYWlsLmNsIiwiZXhwIjoxNjkxMzY1MjU1LCJ1c2VybmFtZSI6ImZlcm5hbmRvIn0.2tAZUWeIIoS-YuqiuaPtLrBnl0WDjbEEu_Zz49MmC7vLSR2Vm2MVY2_i8RyrZWy_"
+							}
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\"id\": 1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:8080/cancel-participation-in-event/1"
+					},
+					"response": []
+				},
+				{
+					"name": "cancel event",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "Bearer eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJmLnRvbG9zYTAxQHVmcm9tYWlsLmNsIiwiZXhwIjoxNjkxMzY1MjU1LCJ1c2VybmFtZSI6ImZlcm5hbmRvIn0.2tAZUWeIIoS-YuqiuaPtLrBnl0WDjbEEu_Zz49MmC7vLSR2Vm2MVY2_i8RyrZWy_"
+							}
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:8080/cancel-event/1"
+					},
+					"response": []
+				},
+				{
+					"name": "List Event",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "Bearer eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJmLnRvbG9zYTAxQHVmcm9tYWlsLmNsIiwiZXhwIjoxNjkxMzY1MjU1LCJ1c2VybmFtZSI6ImZlcm5hbmRvIn0.2tAZUWeIIoS-YuqiuaPtLrBnl0WDjbEEu_Zz49MmC7vLSR2Vm2MVY2_i8RyrZWy_"
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": "http://localhost:8080/List-event"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "maps",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		}
+	]
+}
